@@ -8,7 +8,8 @@ Exposed:
 - `DIDResolution` - type for DIDResolution, as the thing that DID resolver responds with,
 - `ParsedDID` - [DID URL](https://www.w3.org/TR/did-core/#did-url-syntax) in parsed form,
 - `parse` - transform DID URL string into `ParsedDID`,
-- `IResolver` - interface for generic DID Resolver.
+- `IResolver` - interface for generic DID Resolver,
+- `NoResolutionError` - error class to indicate unavailable resolution.
 
 ## Installation
 
