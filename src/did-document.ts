@@ -2,19 +2,21 @@ export interface DIDDocument {
     "@context": "https://w3id.org/did/v1";
     id: string;
     publicKey: PublicKey[];
-    authentication?: (string | PublicKey | Authentication)[];
+    authentication?: PublicKeyRef[];
     uportProfile?: any;
     service?: ServiceEndpoint[];
     created?: string;
     updated?: string;
     proof?: LinkedDataProof;
-    keyAgreement?: (string | PublicKey)[];
-    assertionMethod?: (string | PublicKey)[];
-    capabilityDelegation?: (string | PublicKey)[];
-    capabilityInvocation?: (string | PublicKey)[];
+    keyAgreement?: PublicKeyRef[];
+    assertionMethod?: PublicKeyRef[];
+    capabilityDelegation?: PublicKeyRef[];
+    capabilityInvocation?: PublicKeyRef[];
 }
 
-export interface Authentication {
+export type PublicKeyRef = string | PublicKey | PublicKeyExtendedRef
+
+export interface PublicKeyExtendedRef {
     type: string;
     publicKey: string;
 }
